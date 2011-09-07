@@ -8987,5 +8987,5 @@ Aman
 )];
 
 sub generate {
-    return $ra_surnames->[ int(rand(scalar(@$ra_surnames) + 1)) ];
+    return $ra_surnames->[ int(rand(scalar(@$ra_surnames) )) ];
 }
