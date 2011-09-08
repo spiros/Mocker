@@ -25,6 +25,11 @@ my $rh_configuration = {
     
     'rows' => 50,
     
+    'output' => {
+        'target' => 'screen',
+        'filename' => '/tmp/moo.txt',
+    }
+    
 };
 
 my $Mocker = Mocker->new( $rh_configuration );

@@ -21,9 +21,9 @@ sub new {
     
     $self->{config} = 
         $self->parse_configuration( $rh_config );
-    
+
     $self->{writer} =
-        Mocker::Writer->new( );
+        Mocker::Writer->new( $self->{config}{output} );
     
     return $self;
 }
@@ -38,8 +38,10 @@ sub parse_configuration {
     my $rh_variables = $rh->{variables};
     
     my $total_rows = $rh->{rows};
+    my $rh_output  = $rh->{output};
     
     $rh_config->{total_rows} = $total_rows;
+    $rh_config->{output}     = $rh_output;
 
     foreach my $variable ( keys %$rh_variables ) {
         

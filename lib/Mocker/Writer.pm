@@ -5,30 +5,30 @@ package Mocker::Writer;
 # ABSTRACT: Data writer class.
 
 use Text::CSV;
+use Carp;
+
+use Mocker::Writer::Screen;
+use Mocker::Writer::File;
+
 
 sub new {
-    my $class = shift;
-    my $self  = { };
+    my $class     = shift;
+    my $rh_params = shift;
     
-    $self->{csv} = Text::CSV->new();
-    bless $self, $class;
-    return $self;
+    my $Combiner = Mocker::Combiner->new();
     
-}
-
-sub write_row {
-    my $self    = shift;
-    my $ra_row  = shift;
+    if ( $rh_params->{target} eq 'screen' ){
+        return Mocker::Writer::Screen->new( $rh_params );
+    } 
     
-    my $rv = $self->{csv}->combine( @$ra_row );
-    
-    if ( $rv ) {
-        printf STDERR ("%s\n", $self->{csv}->string );
-    }
+    elsif ( $rh_params->{target} eq 'file' ){
+        return Mocker::Writer::File->new( $rh_params );
+    } 
     
     else {
-        return undef;
-    }
+        croak "Unknown target type for output."
+    } 
+
 }
 
 1;
