@@ -22,11 +22,24 @@ my $config =  {
     'first_name_female'  => { class => 'Mocker::Data::Person::FirstNameFemale'  },
 };
 
+=head2 new 
+
+Create a new instance of the class.
+
+=cut
+
 sub new {
     my $class = shift;
     my $self  = { };
     return bless $self, $class;
 }
+
+=head2 get_class_for_variable
+
+Return the name of the data generating class for the given variable.
+This method returns I<undef> on error.
+
+=cut
 
 sub get_class_for_variable {
     my $self = shift;
@@ -38,6 +51,14 @@ sub get_class_for_variable {
         return undef;
     }
 }
+
+=head2 create_class_for_variable 
+
+Return an instantiated data generating class for the given
+variable. Will optionally take class options and pass them along.
+This method returns I<undef> on error.
+
+=cut
 
 sub create_class_for_variable {
     my $self = shift;
