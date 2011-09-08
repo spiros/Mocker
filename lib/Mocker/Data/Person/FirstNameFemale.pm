@@ -4287,6 +4287,12 @@ my $ra_first_names = [qw(
     Allyn
 )];
 
+=head2 generate
+
+Generate a new value.
+
+=cut
+
 sub generate {
     return $ra_first_names->[ int(rand(scalar(@$ra_first_names) )) ];
 }

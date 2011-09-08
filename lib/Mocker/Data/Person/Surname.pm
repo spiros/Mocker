@@ -8987,6 +8987,12 @@ Aman
 
 )];
 
+=head2 generate
+
+Generate a new value.
+
+=cut
+
 sub generate {
     return $ra_surnames->[ int(rand(scalar(@$ra_surnames) )) ];
 }
