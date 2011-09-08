@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Mocker::Config;
+# ABSTRACT: Data generator configuration.
 
 require Mocker::Data::Medical::Gender;
 require Mocker::Data::Medical::HeartRate;
