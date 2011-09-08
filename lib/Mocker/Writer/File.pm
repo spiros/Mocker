@@ -6,6 +6,13 @@ package Mocker::Writer::File;
 
 use Mocker::Combiner;
 
+=head2 new
+
+Create a new instance of the class.
+This method returns I<undef> on error.
+
+=cut
+
 sub new {
     my $class     = shift;
     my $rh_params = shift;
