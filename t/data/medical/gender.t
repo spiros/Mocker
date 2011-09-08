@@ -12,11 +12,11 @@ use_ok('Mocker::Data::Medical::Gender');
         'female' => 1,
         'indeterminate' => 1
         };
-
+    
+    my $Mocker = Mocker::Data::Medical::Gender->new();
     my $n = 0;
     while ( $n <= 1000 ){
-    
-        my $Mocker = Mocker::Data::Medical::Gender->new();
+        $Mocker->clear;
         my $value = $Mocker->value;
         ok( exists $rh_expected_genders->{$value}, "test value: $value" );
         $n++;
