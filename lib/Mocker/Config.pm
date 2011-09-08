@@ -9,6 +9,8 @@ require Mocker::Data::Medical::HeartRate;
 require Mocker::Data::Medical::Height;
 require Mocker::Data::Medical::Weight;
 require Mocker::Data::Person::Surname;
+require Mocker::Data::Person::FirstNameMale;
+require Mocker::Data::Person::FirstNameFemale;
 
 my $config =  {
     'gender'     => { class => 'Mocker::Data::Medical::Gender'    },
@@ -16,6 +18,8 @@ my $config =  {
     'height'     => { class => 'Mocker::Data::Medical::Height'    },
     'weight'     => { class => 'Mocker::Data::Medical::Weight'    },
     'surname'    => { class => 'Mocker::Data::Person::Surname'    },
+    'first_name_male'    => { class => 'Mocker::Data::Person::FirstNameMale'    },
+    'first_name_female'  => { class => 'Mocker::Data::Person::FirstNameFemale'  },
 };
 
 sub new {
