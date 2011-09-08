@@ -12,7 +12,7 @@ use_ok('Mocker::Data::Medical::Weight');
     
         my $Mocker = Mocker::Data::Medical::Weight->new();
         my $value = $Mocker->value;
-        ok( $value >= 0.001 && $value <= 500, "test value: $value" );
+        ok( $value >= 10 && $value <= 500, "test value: $value" );
         $n++;
     }
 
