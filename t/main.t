@@ -31,4 +31,6 @@ my $Mocker = Mocker->new( $rh_configuration );
 
 isa_ok($Mocker, 'Mocker');
 
+$Mocker->generate;
+
 done_testing();

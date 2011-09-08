@@ -7,6 +7,7 @@ package Mocker;
 use Mocker::Config;
 use Carp;
 use Data::Dumper;
+use Mocker::Writer;
 
 sub new {
     my $class     = shift;
@@ -20,6 +21,9 @@ sub new {
     
     $self->{config} = 
         $self->parse_configuration( $rh_config );
+    
+    $self->{writer} =
+        Mocker::Writer->new( );
     
     return $self;
 }
@@ -47,6 +51,45 @@ sub parse_configuration {
     }
     
     return $rh_config;
+}
+
+sub generate {
+    my $self = shift;
+    
+    my $n=0;
+    
+    my $rh_config  = $self->{config};
+    my $total_rows = $rh_config->{total_rows};
+    my $rh_columns = $rh_config->{columns};
+    
+    my $Writer = $self->{writer};
+    
+    while ( $n <= $total_rows ) {
+        
+        my $ra_row = $self->generate_row( $rh_columns );
+
+        $Writer->write_row( $ra_row );
+        $n++;
+    }
+    
+    return 1;
+
+}
+
+sub generate_row {
+    my $self = shift;
+    my $rh_columns = shift;
+    
+    my $ra_row = [ ];
+    
+    foreach my $index ( keys %$rh_columns ){
+        my $Column = $rh_columns->{$index};
+        $Column->clear();
+        my $value = $Column->value;
+        push(@$ra_row, $value)
+    }
+    
+    return $ra_row;
 }
 
 1;

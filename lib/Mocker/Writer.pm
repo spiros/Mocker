@@ -23,7 +23,7 @@ sub write_row {
     my $rv = $self->{csv}->combine( @$ra_row );
     
     if ( $rv ) {
-#        printf STDERR ("%s\n", $self->{csv}->string );
+        printf STDERR ("%s\n", $self->{csv}->string );
     }
     
     else {
