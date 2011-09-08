@@ -3,6 +3,7 @@ use warnings;
 
 package Mocker::Data::Person::Surname;
 # ABSTRACT: Surnames
+# Taken from US Census http://www.census.gov/genealogy/names/names_files.html
 
 use Mouse;
 
