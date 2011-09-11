@@ -27,7 +27,6 @@ my $rh_configuration = {
     
     'output' => {
         'target' => 'screen',
-        'filename' => '/tmp/moo.txt',
     }
     
 };
