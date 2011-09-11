@@ -1,1 +1,3 @@
 * Various medical measurements should obey the Gaussian distribution and not be entirely random.
+
+* Add more options to the number generation methods: negative numbers, more control over parameters
