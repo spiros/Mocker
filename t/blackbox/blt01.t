@@ -2,8 +2,12 @@ use strict;
 use warnings;
 
 use Test::More;
+use File::Temp qw/ tempfile tempdir /;
 
 use_ok('Mocker');
+
+my $tmp_dir = tempdir( CLEANUP => 1 );
+my ($tmp_fh, $tmp_filename) = tempfile( DIR => $tmp_dir );
 
 my $rh_configuration = { 
     
@@ -26,8 +30,8 @@ my $rh_configuration = {
     'rows' => 100,
     
     'output' => {
-        'target' => 'file',
-        'filename' => '/tmp/moo.txt'
+        'target'   => 'file',
+        'filename' => $tmp_filename
     }
     
 };
