@@ -18,7 +18,8 @@ use_ok('Mocker::Writer');
 
 {
     my $rh_params = {
-        target => 'file'
+        target => 'file',
+        filename => '/tmp/moo'
     };
 
     my $Writer = Mocker::Writer->new( $rh_params );
