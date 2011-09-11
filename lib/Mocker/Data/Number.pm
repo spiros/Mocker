@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Mocker::Data::Number;
+# ABSTRACT: Generate a number within a range
 
 use base 'Mocker::Data';
 use Carp;
@@ -27,8 +28,8 @@ sub generate {
     }
     
     defined $round
-        ? return int(rand($max-$min))
-        : return rand($max-$min);
+        ? return int(rand($max-$min)) + $min
+        : return rand($max-$min) + $min;
     
 }
 
