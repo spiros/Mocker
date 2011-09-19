@@ -41,6 +41,11 @@ sub parse_configuration {
     my $rh_output  = $rh->{output};
     
     $rh_config->{total_rows} = $total_rows;
+    
+    unless ( defined $total_rows && $total_rows ) {
+        croak 'total_rows must be at least one';
+    }
+    
     $rh_config->{output}     = $rh_output;
 
     foreach my $variable ( keys %$rh_variables ) {
