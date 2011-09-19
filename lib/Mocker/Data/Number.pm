@@ -14,9 +14,9 @@ Generate a new value.
 =cut
 
 sub generate {
-    my $self = shift;
-    my $min  = $self->min();
-    my $max  = $self->max();
+    my $self   = shift;
+    my $min    = $self->min();
+    my $max    = $self->max();
     my $round  = $self->round();
     
     unless ( defined $min ) {
