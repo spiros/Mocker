@@ -22,9 +22,14 @@ sub new {
 
     my $filename = $rh_params->{filename};
 
-    unless ( defined $filename && -e $filename ) {
+    unless ( defined $filename ) {
         croak "You must specify a filename for the file output type.";
     }
+    
+    unless ( ! -e $filename ){
+        croak "The filename $filename exists."
+    }
+    
     my $fh;
     open $fh, '>', $filename 
         || croak "Could not open $filename for writing.";

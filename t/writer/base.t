@@ -17,9 +17,15 @@ use_ok('Mocker::Writer');
 }
 
 {
+    
+    use File::Temp qw/ tempfile tempdir /;
+
+    my $tmp_dir = tempdir( CLEANUP => 1 );
+    my $tmp_filename = sprintf('%s/%d', $tmp_dir, time );
+    
     my $rh_params = {
         target => 'file',
-        filename => '/tmp/moo'
+        filename => $tmp_filename
     };
 
     my $Writer = Mocker::Writer->new( $rh_params );

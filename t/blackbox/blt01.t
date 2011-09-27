@@ -7,7 +7,7 @@ use File::Temp qw/ tempfile tempdir /;
 use_ok('Mocker');
 
 my $tmp_dir = tempdir( CLEANUP => 1 );
-my ($tmp_fh, $tmp_filename) = tempfile( DIR => $tmp_dir );
+my $tmp_filename = sprintf('%s/%d', $tmp_dir, time );
 
 my $rh_configuration = { 
     
