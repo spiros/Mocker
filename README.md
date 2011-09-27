@@ -8,11 +8,13 @@ my $rh_configuration = {
     'variables' => {
         
         'gender' => {
-            'order' => 0
+            'order' => 0,
+			'nicemame' => 'patient_gender'
         },
         
         'surname' => {
-            'order' => 1
+            'order' => 1,
+			'nicename' => 'patient_surname'
         },
         
         'weight' => {
@@ -24,6 +26,7 @@ my $rh_configuration = {
             'min' => 10,
             'max' => 20,
             'round' => 1,
+			'nicename' => 'patient_study_id'
         }
         
     },
