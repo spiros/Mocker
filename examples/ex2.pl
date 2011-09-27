@@ -17,6 +17,7 @@ my $rh_configuration = {
             'order' => 1,
             'min' => 1,
             'max' => 5000,
+            'nicename' => 'random1',
         }
         
     },
