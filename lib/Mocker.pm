@@ -51,6 +51,8 @@ sub parse_configuration {
     foreach my $variable ( keys %$rh_variables ) {
         
         my $rh_options = $rh_variables->{$variable};
+
+        $rh_options->{nicename} ||= $variable;
         my $class = Mocker::Config->get_class_for_variable( $variable );
         my $object = $class->new( $rh_options );
         
@@ -71,6 +73,11 @@ sub generate {
     
     my $Writer = $self->{writer};
     
+    my $ra_headers = 
+        $self->generate_headers( $rh_columns );
+    
+    $Writer->write_row( $ra_headers );
+    
     while ( $n <= $total_rows ) {
         
         my $ra_row = $self->generate_row( $rh_columns );
@@ -81,6 +88,22 @@ sub generate {
     
     return 1;
 
+}
+
+sub generate_headers {
+    my $self = shift;
+    my $rh_columns = shift;
+    
+    my $ra_row = [ ];
+    
+    foreach my $index ( keys %$rh_columns ){
+        my $Column = $rh_columns->{$index};
+        my $nicename = $Column->nicename;
+        push(@$ra_row, $nicename)
+    }
+    
+    return $ra_row;
+    
 }
 
 sub generate_row {

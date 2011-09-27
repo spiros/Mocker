@@ -14,5 +14,6 @@ has 'min'   => ( is => 'rw', isa => 'Num' );
 has 'max'   => ( is => 'rw', isa => 'Num' );
 has 'round' => ( is => 'rw', isa => 'Int' );
 
+has 'nicename'     => ( is => 'rw', isa => 'Str' );
 
 1;
