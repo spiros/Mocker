@@ -10,7 +10,7 @@ extends 'Mocker::Data';
 
 =head2 generate
 
-Generate a new value.
+Generate a new height value between 57 and 252 cm.
 
 =cut
 

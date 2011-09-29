@@ -9,7 +9,8 @@ use Carp;
 
 =head2 generate
 
-Generate a new value.
+Generate a new numeric value. Valid parameters: I<min> specify minimum (default 0), 
+I<max> specify maximum, I<round> round number.
 
 =cut
 

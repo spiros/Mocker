@@ -10,7 +10,7 @@ extends 'Mocker::Data';
 
 =head2 generate
 
-Generate a new value.
+Generate a new weight value between 10 and 500kg.
 
 =cut
 

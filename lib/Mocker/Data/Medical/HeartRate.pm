@@ -10,7 +10,7 @@ extends 'Mocker::Data';
 
 =head2 generate
 
-Generate a new value.
+Generate a new heart rate value between 30 and 220 BPM.
 
 =cut
 

@@ -8989,7 +8989,7 @@ Aman
 
 =head2 generate
 
-Generate a new value.
+Returns a random English surname.
 
 =cut
 

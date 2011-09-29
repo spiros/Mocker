@@ -10,7 +10,8 @@ extends 'Mocker::Data';
 
 =head2 generate
 
-Generate a new value.
+Generate a new value. Valid gender values are 'male', 'female' and
+'indeterminate'.
 
 =cut
 

@@ -59,14 +59,18 @@ reference to hash with the configuration for the desired data.
 
 The following pre-defined canonical variable types are available:
 
-L<Mocker::Data::Medical::Gender>
-L<Mocker::Data::Medical::HeartRate>
-L<Mocker::Data::Medical::Height>
-L<Mocker::Data::Medical::Weight>
-L<Mocker::Data::Number>
-L<Mocker::Data::Person::Surname>
-L<Mocker::Data::Person::FirstNameFemale>
-L<Mocker::Data::Person::FirstNameMale>
+=over 4
+
+=item * gender L<Mocker::Data::Medical::Gender>
+=item * heart_rate L<Mocker::Data::Medical::HeartRate>
+=item * height L<Mocker::Data::Medical::Height>
+=item * weight L<Mocker::Data::Medical::Weight>
+=item * number L<Mocker::Data::Number>
+=item * surname L<Mocker::Data::Person::Surname>
+=item * first_name_female L<Mocker::Data::Person::FirstNameFemale>
+=item * first_name_male L<Mocker::Data::Person::FirstNameMale>
+
+=back
 
 The 'variables' key of the configuration hash contains the canonical column names 
 along with some other per-variable configuration parameters. The I<order> contains the

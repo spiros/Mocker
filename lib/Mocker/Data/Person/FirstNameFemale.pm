@@ -4289,7 +4289,7 @@ my $ra_first_names = [qw(
 
 =head2 generate
 
-Generate a new value.
+Returns a random English female first name.
 
 =cut
 
